@@ -403,7 +403,7 @@ export default function KrishmasKarma() {
               <a href="#contact" className="nav-link" style={{ textDecoration: "none" }}>Contact</a>
             </div>
             <a
-              href="tel:6892997172"
+              href="tel:#"
               className="cta-btn font-body"
               style={{
                 padding: "10px 24px",
@@ -562,7 +562,7 @@ export default function KrishmasKarma() {
                 Explore Services
               </a>
               <a
-                href="tel:6892997172"
+                href="tel:#"
                 className="cta-btn font-body"
                 style={{
                   padding: "16px 40px",
@@ -910,7 +910,7 @@ export default function KrishmasKarma() {
 
           <FadeIn delay={0.15}>
             <a
-              href="tel:6892997172"
+              href="tel:#"
               className="font-display"
               style={{
                 display: "block",
@@ -922,7 +922,7 @@ export default function KrishmasKarma() {
                 letterSpacing: "0.06em",
               }}
             >
-              689-299-7172
+              Phone Number Comingsoon..
             </a>
           </FadeIn>
 
