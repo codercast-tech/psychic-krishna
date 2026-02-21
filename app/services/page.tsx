@@ -487,7 +487,7 @@ export default function ServicesPage() {
               <FadeIn delay={0.4}>
                 <div style={{ display: "flex", gap: 16, flexWrap: "wrap" }}>
                   <a
-                    href="tel:6892997172"
+                    href="tel:#"
                     className="cta-btn-primary cta-btn font-body"
                     style={{
                       padding: "14px 36px",
@@ -501,7 +501,7 @@ export default function ServicesPage() {
                     Book Now
                   </a>
                   <a
-                    href="tel:6892997172"
+                    href="tel:#"
                     className="cta-btn font-body"
                     style={{
                       padding: "14px 36px",
@@ -511,7 +511,7 @@ export default function ServicesPage() {
                       textDecoration: "none",
                     }}
                   >
-                    Call 689-299-7172
+                    Call Coming Soon
                   </a>
                 </div>
               </FadeIn>
@@ -563,7 +563,7 @@ export default function ServicesPage() {
 
           <FadeIn delay={0.15}>
             <a
-              href="tel:6892997172"
+              href="tel:#"
               className="font-display"
               style={{
                 display: "block",
@@ -582,7 +582,7 @@ export default function ServicesPage() {
           <FadeIn delay={0.25}>
             <div style={{ display: "flex", gap: 20, justifyContent: "center", flexWrap: "wrap" }}>
               <a
-                href="tel:6892997172"
+                href="tel:#"
                 className="cta-btn-primary cta-btn font-body"
                 style={{
                   padding: "16px 44px",
