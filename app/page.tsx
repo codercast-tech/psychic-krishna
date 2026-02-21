@@ -929,7 +929,7 @@ export default function KrishmasKarma() {
           <FadeIn delay={0.3}>
             <div style={{ display: "flex", gap: 20, justifyContent: "center", flexWrap: "wrap" }}>
               <a
-                href="tel:6892997172"
+                href="tel:#"
                 className="cta-btn-primary cta-btn font-body"
                 style={{
                   padding: "16px 44px",
