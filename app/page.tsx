@@ -6,24 +6,35 @@ const SERVICES = [
   {
     id: "aura-photos",
     title: "Aura Photos",
+    price: "$75",
     desc: "Capture the colors of your energy field and uncover insights into your emotional, spiritual, and physical wellbeing.",
     image: "/aura-photos.jpg",
   },
   {
     id: "tarot-readings",
     title: "Tarot Card\nReadings",
+    price: "$125",
     desc: "Gain clarity and direction with personalized tarot card readings from our experienced and intuitive readers.",
     image: "/tarot-readings.jpg",
   },
   {
+    id: "palm-reading",
+    title: "Palm\nReading",
+    price: "$50",
+    desc: "Unlock the secrets written in the lines of your hands. Our palm readers reveal insights into your life path, relationships, and destiny.",
+    image: "/palm-reading.jpg",
+  },
+  {
     id: "crystals",
     title: "Crystals",
+    price: "",
     desc: "Discover the healing properties of our carefully selected crystals and learn how to harness their energy for emotional and spiritual balance.",
     image: "/crystals.jpg",
   },
   {
     id: "candles",
-    title: "Candles & More",
+    title: "Candles\n& More",
+    price: "",
     desc: "Enhance your space with our selection of spiritual candles, incense, and other mystical tools to support your practice.",
     image: "/candles.jpg",
   },
@@ -264,21 +275,28 @@ export default function KrishmasKarma() {
 
         .services-grid {
           display: grid;
-          grid-template-columns: repeat(4, 1fr);
-          gap: 28px;
+          grid-template-columns: repeat(5, 1fr);
+          gap: 24px;
         }
 
-        @media (max-width: 900px) {
+        @media (max-width: 1100px) {
           .services-grid {
-            grid-template-columns: repeat(2, 1fr);
+            grid-template-columns: repeat(3, 1fr);
             gap: 20px;
           }
         }
 
-        @media (max-width: 540px) {
+        @media (max-width: 700px) {
+          .services-grid {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+          }
+        }
+
+        @media (max-width: 480px) {
           .services-grid {
             grid-template-columns: 1fr;
-            max-width: 320px;
+            max-width: 300px;
             margin: 0 auto;
           }
         }
@@ -356,7 +374,6 @@ export default function KrishmasKarma() {
         }
       `}</style>
 
-      {/* Film grain overlay */}
       <div className="grain-overlay" />
 
       {/* ─── NAVIGATION ─── */}
@@ -403,7 +420,7 @@ export default function KrishmasKarma() {
               <a href="#contact" className="nav-link" style={{ textDecoration: "none" }}>Contact</a>
             </div>
             <a
-              href="tel:#"
+              href="tel:5717285900"
               className="cta-btn font-body"
               style={{
                 padding: "10px 24px",
@@ -461,10 +478,7 @@ export default function KrishmasKarma() {
         }}
       >
         <div style={{ position: "absolute", inset: 0, zIndex: 0, background: "#0e0a07" }}>
-
           <HeroVideo />
-
-          {/* Original overlay effect: lateral + vertical combined */}
           <div
             style={{
               position: "absolute",
@@ -473,11 +487,9 @@ export default function KrishmasKarma() {
               zIndex: 2,
             }}
           />
-
           <div style={{ position: "relative", zIndex: 3 }}>
             <StarField />
           </div>
-
           <div
             style={{
               position: "absolute",
@@ -496,86 +508,86 @@ export default function KrishmasKarma() {
 
         <div style={{ position: "relative", zIndex: 10, textAlign: "left", maxWidth: 1200, width: "100%", margin: "0 auto", padding: "180px 48px 120px" }}>
           <div style={{ maxWidth: 540 }}>
-          <FadeIn>
-            <div
-              className="font-body"
-              style={{
-                fontSize: 12,
-                letterSpacing: "0.5em",
-                textTransform: "uppercase",
-                color: "rgba(200,160,80,0.6)",
-                marginBottom: 32,
-              }}
-            >
-              ✦ &nbsp; Spiritual Guidance &amp; Sacred Goods &nbsp; ✦
-            </div>
-          </FadeIn>
-
-          <FadeIn delay={0.15}>
-            <h1
-              className="font-display shimmer-text"
-              style={{
-                fontSize: "clamp(42px, 7vw, 82px)",
-                fontWeight: 300,
-                lineHeight: 1.1,
-                letterSpacing: "0.02em",
-                marginBottom: 28,
-              }}
-            >
-              Krishna&apos;s
-              <br />
-              Karma
-            </h1>
-          </FadeIn>
-
-          <FadeIn delay={0.3}>
-            <p
-              className="font-body"
-              style={{
-                fontSize: 17,
-                fontWeight: 300,
-                lineHeight: 1.8,
-                color: "rgba(232,213,181,0.6)",
-                maxWidth: 440,
-                margin: "0 0 48px",
-              }}
-            >
-              Aura photography, tarot readings, healing crystals, and spiritual tools
-              to illuminate your path and awaken your inner truth.
-            </p>
-          </FadeIn>
-
-          <FadeIn delay={0.45}>
-            <div style={{ display: "flex", gap: 20, flexWrap: "wrap" }}>
-              <a
-                href="/services"
-                className="cta-btn-primary cta-btn font-body"
+            <FadeIn>
+              <div
+                className="font-body"
                 style={{
-                  padding: "16px 40px",
-                  fontSize: 13,
-                  letterSpacing: "0.2em",
+                  fontSize: 12,
+                  letterSpacing: "0.5em",
                   textTransform: "uppercase",
-                  textDecoration: "none",
-                  fontWeight: 500,
+                  color: "rgba(200,160,80,0.6)",
+                  marginBottom: 32,
                 }}
               >
-                Explore Services
-              </a>
-              <a
-                href="tel:#"
-                className="cta-btn font-body"
+                ✦ &nbsp; Spiritual Guidance &amp; Sacred Goods &nbsp; ✦
+              </div>
+            </FadeIn>
+
+            <FadeIn delay={0.15}>
+              <h1
+                className="font-display shimmer-text"
                 style={{
-                  padding: "16px 40px",
-                  fontSize: 13,
-                  letterSpacing: "0.2em",
-                  textTransform: "uppercase",
-                  textDecoration: "none",
+                  fontSize: "clamp(42px, 7vw, 82px)",
+                  fontWeight: 300,
+                  lineHeight: 1.1,
+                  letterSpacing: "0.02em",
+                  marginBottom: 28,
                 }}
               >
-                Book a Reading
-              </a>
-            </div>
-          </FadeIn>
+                Krishna&apos;s
+                <br />
+                Karma
+              </h1>
+            </FadeIn>
+
+            <FadeIn delay={0.3}>
+              <p
+                className="font-body"
+                style={{
+                  fontSize: 17,
+                  fontWeight: 300,
+                  lineHeight: 1.8,
+                  color: "rgba(232,213,181,0.6)",
+                  maxWidth: 440,
+                  margin: "0 0 48px",
+                }}
+              >
+                Aura photography, tarot readings, palm readings, healing crystals, and spiritual tools
+                to illuminate your path and awaken your inner truth.
+              </p>
+            </FadeIn>
+
+            <FadeIn delay={0.45}>
+              <div style={{ display: "flex", gap: 20, flexWrap: "wrap" }}>
+                <a
+                  href="/services"
+                  className="cta-btn-primary cta-btn font-body"
+                  style={{
+                    padding: "16px 40px",
+                    fontSize: 13,
+                    letterSpacing: "0.2em",
+                    textTransform: "uppercase",
+                    textDecoration: "none",
+                    fontWeight: 500,
+                  }}
+                >
+                  Explore Services
+                </a>
+                <a
+                  href="tel:5717285900"
+                  className="cta-btn font-body"
+                  style={{
+                    padding: "16px 40px",
+                    fontSize: 13,
+                    letterSpacing: "0.2em",
+                    textTransform: "uppercase",
+                    textDecoration: "none",
+                  }}
+                >
+                  Book a Reading
+                </a>
+              </div>
+            </FadeIn>
           </div>
 
           <FadeIn delay={0.7}>
@@ -603,9 +615,9 @@ export default function KrishmasKarma() {
           }}
         />
 
-        <div style={{ maxWidth: 1100, margin: "0 auto" }}>
+        <div style={{ maxWidth: 1200, margin: "0 auto" }}>
           <FadeIn>
-            <div style={{ textAlign: "center", marginBottom: 60 }}>
+            <div style={{ textAlign: "center", marginBottom: 48 }}>
               <h2 className="font-display" style={{ fontSize: "clamp(36px, 5vw, 54px)", fontWeight: 400, marginBottom: 16 }}>
                 Services
               </h2>
@@ -614,11 +626,14 @@ export default function KrishmasKarma() {
                 Explore our range of spiritual and mystical services designed to guide and
                 inspire your journey towards enlightenment and healing.
               </p>
+              <p className="font-body" style={{ fontSize: 13, fontWeight: 400, color: "rgba(200,160,80,0.5)", marginTop: 16, letterSpacing: "0.05em" }}>
+                All readings are by appointment only &nbsp;·&nbsp; Payment due at time of booking
+              </p>
             </div>
           </FadeIn>
 
           <FadeIn>
-            <div style={{ textAlign: "center", marginBottom: 48 }}>
+            <div style={{ textAlign: "center", marginBottom: 40 }}>
               <svg viewBox="0 0 300 20" fill="none" style={{ width: 200, height: 16, opacity: 0.4 }}>
                 <line x1="0" y1="10" x2="120" y2="10" stroke="#c9a96e" strokeWidth="0.5" />
                 <circle cx="130" cy="10" r="2" fill="#c9a96e" />
@@ -631,7 +646,7 @@ export default function KrishmasKarma() {
 
           <div className="services-grid">
             {SERVICES.map((s, i) => (
-              <FadeIn key={s.title} delay={i * 0.12}>
+              <FadeIn key={s.title} delay={i * 0.1}>
                 <div
                   className="service-card"
                   style={{
@@ -643,7 +658,7 @@ export default function KrishmasKarma() {
                     height: "100%",
                   }}
                 >
-                  <div style={{ padding: 14, paddingBottom: 0 }}>
+                  <div style={{ padding: 12, paddingBottom: 0 }}>
                     <div
                       style={{
                         position: "relative",
@@ -657,6 +672,29 @@ export default function KrishmasKarma() {
                       <div style={{ position: "absolute", top: 4, right: 4, width: 16, height: 16, borderTop: "1px solid rgba(200,160,80,0.5)", borderRight: "1px solid rgba(200,160,80,0.5)", zIndex: 2 }} />
                       <div style={{ position: "absolute", bottom: 4, left: 4, width: 16, height: 16, borderBottom: "1px solid rgba(200,160,80,0.5)", borderLeft: "1px solid rgba(200,160,80,0.5)", zIndex: 2 }} />
                       <div style={{ position: "absolute", bottom: 4, right: 4, width: 16, height: 16, borderBottom: "1px solid rgba(200,160,80,0.5)", borderRight: "1px solid rgba(200,160,80,0.5)", zIndex: 2 }} />
+
+                      {/* Price badge */}
+                      {s.price && (
+                        <div
+                          className="font-body"
+                          style={{
+                            position: "absolute",
+                            top: 10,
+                            right: 10,
+                            background: "rgba(14,10,7,0.85)",
+                            border: "1px solid rgba(200,160,80,0.4)",
+                            padding: "4px 12px",
+                            fontSize: 14,
+                            fontWeight: 500,
+                            color: "#c9a96e",
+                            letterSpacing: "0.05em",
+                            zIndex: 3,
+                            backdropFilter: "blur(4px)",
+                          }}
+                        >
+                          {s.price}
+                        </div>
+                      )}
 
                       <img
                         src={s.image}
@@ -674,13 +712,13 @@ export default function KrishmasKarma() {
                     </div>
                   </div>
 
-                  <div style={{ padding: "20px 18px 24px", textAlign: "center", display: "flex", flexDirection: "column", flexGrow: 1 }}>
+                  <div style={{ padding: "16px 14px 20px", textAlign: "center", display: "flex", flexDirection: "column", flexGrow: 1 }}>
                     <h3
                       className="font-display"
                       style={{
-                        fontSize: 22,
+                        fontSize: 20,
                         fontWeight: 500,
-                        marginBottom: 6,
+                        marginBottom: 4,
                         letterSpacing: "0.02em",
                         lineHeight: 1.3,
                         whiteSpace: "pre-line",
@@ -689,12 +727,12 @@ export default function KrishmasKarma() {
                       {s.title}
                     </h3>
 
-                    <div style={{ margin: "8px auto 14px", color: "rgba(200,160,80,0.4)", fontSize: 10 }}>✦</div>
+                    <div style={{ margin: "6px auto 10px", color: "rgba(200,160,80,0.4)", fontSize: 10 }}>✦</div>
 
                     <p
                       className="font-body"
                       style={{
-                        fontSize: 13,
+                        fontSize: 12,
                         fontWeight: 300,
                         color: "rgba(232,213,181,0.5)",
                         lineHeight: 1.7,
@@ -709,9 +747,9 @@ export default function KrishmasKarma() {
                       className="cta-btn font-body"
                       style={{
                         display: "inline-block",
-                        marginTop: 20,
-                        padding: "10px 28px",
-                        fontSize: 12,
+                        marginTop: 16,
+                        padding: "8px 22px",
+                        fontSize: 11,
                         letterSpacing: "0.15em",
                         textTransform: "uppercase",
                         textDecoration: "none",
@@ -910,7 +948,7 @@ export default function KrishmasKarma() {
 
           <FadeIn delay={0.15}>
             <a
-              href="tel:#"
+              href="tel:5717285900"
               className="font-display"
               style={{
                 display: "block",
@@ -918,18 +956,36 @@ export default function KrishmasKarma() {
                 fontWeight: 300,
                 color: "#c9a96e",
                 textDecoration: "none",
-                margin: "32px 0 48px",
+                margin: "32px 0 16px",
                 letterSpacing: "0.06em",
               }}
             >
-              Phone Number Comingsoon..
+              571-728-5900
             </a>
+            <p className="font-body" style={{ fontSize: 14, color: "rgba(232,213,181,0.5)", marginBottom: 8 }}>
+              LunaPsychic1111@gmail.com
+            </p>
+            <a
+              href="https://maps.google.com/?q=5716+Telegraph+Rd+Alexandria+VA+22303"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-body"
+              style={{ fontSize: 14, color: "rgba(200,160,80,0.5)", textDecoration: "none", display: "block", marginBottom: 40 }}
+            >
+              5716 Telegraph Rd, Alexandria, VA 22303
+            </a>
+          </FadeIn>
+
+          <FadeIn delay={0.25}>
+            <p className="font-body" style={{ fontSize: 13, color: "rgba(232,213,181,0.4)", marginBottom: 32, fontStyle: "italic" }}>
+              All readings are by appointment only &nbsp;·&nbsp; All payments must be made at the time of booking
+            </p>
           </FadeIn>
 
           <FadeIn delay={0.3}>
             <div style={{ display: "flex", gap: 20, justifyContent: "center", flexWrap: "wrap" }}>
               <a
-                href="tel:#"
+                href="tel:5717285900"
                 className="cta-btn-primary cta-btn font-body"
                 style={{
                   padding: "16px 44px",
@@ -955,6 +1011,21 @@ export default function KrishmasKarma() {
               >
                 Email Us
               </a>
+              <a
+                href="https://maps.google.com/?q=5716+Telegraph+Rd+Alexandria+VA+22303"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="cta-btn font-body"
+                style={{
+                  padding: "16px 44px",
+                  fontSize: 13,
+                  letterSpacing: "0.2em",
+                  textTransform: "uppercase",
+                  textDecoration: "none",
+                }}
+              >
+                Get Directions
+              </a>
             </div>
           </FadeIn>
         </div>
@@ -968,7 +1039,10 @@ export default function KrishmasKarma() {
               Krishna&apos;s Karma
             </div>
             <div className="font-body" style={{ fontSize: 12, color: "rgba(232,213,181,0.35)", letterSpacing: "0.1em" }}>
-              Spiritual Guidance &amp; Sacred Goods
+              5716 Telegraph Rd, Alexandria, VA 22303
+            </div>
+            <div className="font-body" style={{ fontSize: 12, color: "rgba(232,213,181,0.35)", letterSpacing: "0.1em", marginTop: 4 }}>
+              571-728-5900 &nbsp;·&nbsp; LunaPsychic1111@gmail.com
             </div>
           </div>
 

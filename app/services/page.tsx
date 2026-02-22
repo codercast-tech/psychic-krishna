@@ -7,6 +7,7 @@ const SERVICES_DETAIL = [
     id: "aura-photos",
     title: "Aura Photos",
     subtitle: "See Your Energy in Living Color",
+    price: "$75",
     image: "/aura-photos.jpg",
     description: [
       "An aura photograph captures the electromagnetic energy field that surrounds your body, revealing vibrant colors that reflect your emotional, spiritual, and physical state at that moment in time.",
@@ -24,6 +25,7 @@ const SERVICES_DETAIL = [
     id: "tarot-readings",
     title: "Tarot Card Readings",
     subtitle: "Clarity Through Ancient Wisdom",
+    price: "$125",
     image: "/tarot-readings.jpg",
     description: [
       "Tarot is one of the oldest and most trusted tools for spiritual guidance. Each card in the deck carries profound archetypal energy that, when drawn with intention, can illuminate the hidden forces shaping your life's path.",
@@ -38,9 +40,28 @@ const SERVICES_DETAIL = [
     ],
   },
   {
+    id: "palm-reading",
+    title: "Palm Reading",
+    subtitle: "Your Destiny Written in Your Hands",
+    price: "$50",
+    image: "/palm-reading.jpg",
+    description: [
+      "Palm reading, also known as palmistry or chiromancy, is an ancient practice that interprets the lines, shapes, and patterns of your hands to reveal deep insights about your personality, life path, and future possibilities.",
+      "Our skilled palm readers examine the major lines of your hand — the heart line, head line, life line, and fate line — along with the mounts, finger shapes, and subtle markings that tell your unique story. Each hand holds different information: your dominant hand reflects the life you are creating, while your non-dominant hand reveals your innate potential.",
+      "Whether you are curious about love, career direction, health tendencies, or your life's greater purpose, a palm reading offers a tangible and deeply personal form of spiritual guidance that has been trusted across cultures for thousands of years.",
+    ],
+    highlights: [
+      "Detailed analysis of all major palm lines",
+      "Insights into love, career, and life purpose",
+      "Quick yet deeply revealing 15–20 minute session",
+      "Ancient practice trusted across cultures worldwide",
+    ],
+  },
+  {
     id: "crystals",
     title: "Crystals",
     subtitle: "Harness the Earth's Healing Energy",
+    price: "",
     image: "/crystals.jpg",
     description: [
       "Crystals have been used for thousands of years across cultures as powerful tools for healing, protection, and spiritual connection. Each stone carries a unique vibrational frequency that can influence your energy, balance your chakras, and support your intentions.",
@@ -58,6 +79,7 @@ const SERVICES_DETAIL = [
     id: "candles",
     title: "Candles & More",
     subtitle: "Sacred Tools for Your Spiritual Practice",
+    price: "",
     image: "/candles.jpg",
     description: [
       "Fire has been central to spiritual practice since the dawn of humanity. Our ritual candles are crafted with intention, infused with essential oils, herbs, and prayers to support your specific goals — whether you seek protection, abundance, love, clarity, or spiritual cleansing.",
@@ -273,7 +295,7 @@ export default function ServicesPage() {
               <a href="/#contact" className="nav-link" style={{ textDecoration: "none" }}>Contact</a>
             </div>
             <a
-              href="tel:000000000"
+              href="tel:5717285900"
               className="cta-btn font-body"
               style={{
                 padding: "10px 24px",
@@ -327,6 +349,9 @@ export default function ServicesPage() {
             <p className="font-body" style={{ fontSize: 17, fontWeight: 300, color: "rgba(232,213,181,0.55)", maxWidth: 600, margin: "24px auto 0", lineHeight: 1.8 }}>
               Explore our range of spiritual and mystical services designed to guide and
               inspire your journey towards enlightenment and healing.
+            </p>
+            <p className="font-body" style={{ fontSize: 13, fontWeight: 400, color: "rgba(200,160,80,0.5)", marginTop: 16, letterSpacing: "0.05em" }}>
+              All readings are by appointment only &nbsp;·&nbsp; Payment due at time of booking
             </p>
           </FadeIn>
 
@@ -434,9 +459,14 @@ export default function ServicesPage() {
               </FadeIn>
 
               <FadeIn delay={0.25}>
-                <p className="font-display" style={{ fontSize: 20, fontWeight: 300, fontStyle: "italic", color: "#c9a96e", marginBottom: 32 }}>
+                <p className="font-display" style={{ fontSize: 20, fontWeight: 300, fontStyle: "italic", color: "#c9a96e", marginBottom: service.price ? 8 : 32 }}>
                   {service.subtitle}
                 </p>
+                {service.price && (
+                  <div className="font-body" style={{ fontSize: 28, fontWeight: 500, color: "#c9a96e", marginBottom: 32, letterSpacing: "0.02em" }}>
+                    {service.price}
+                  </div>
+                )}
               </FadeIn>
 
               <FadeIn delay={0.3}>
@@ -487,7 +517,7 @@ export default function ServicesPage() {
               <FadeIn delay={0.4}>
                 <div style={{ display: "flex", gap: 16, flexWrap: "wrap" }}>
                   <a
-                    href="tel:#"
+                    href="tel:5717285900"
                     className="cta-btn-primary cta-btn font-body"
                     style={{
                       padding: "14px 36px",
@@ -501,7 +531,7 @@ export default function ServicesPage() {
                     Book Now
                   </a>
                   <a
-                    href="tel:#"
+                    href="tel:5717285900"
                     className="cta-btn font-body"
                     style={{
                       padding: "14px 36px",
@@ -511,7 +541,7 @@ export default function ServicesPage() {
                       textDecoration: "none",
                     }}
                   >
-                    Call Coming Soon
+                    Call 571-728-5900
                   </a>
                 </div>
               </FadeIn>
@@ -563,7 +593,7 @@ export default function ServicesPage() {
 
           <FadeIn delay={0.15}>
             <a
-              href="tel:#"
+              href="tel:5717285900"
               className="font-display"
               style={{
                 display: "block",
@@ -571,18 +601,33 @@ export default function ServicesPage() {
                 fontWeight: 300,
                 color: "#c9a96e",
                 textDecoration: "none",
-                marginBottom: 40,
+                marginBottom: 12,
                 letterSpacing: "0.06em",
               }}
             >
-              Call Coming Soon
+              571-728-5900
             </a>
+            <p className="font-body" style={{ fontSize: 14, color: "rgba(232,213,181,0.5)", marginBottom: 8 }}>
+              LunaPsychic1111@gmail.com
+            </p>
+            <a
+              href="https://maps.google.com/?q=5716+Telegraph+Rd+Alexandria+VA+22303"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-body"
+              style={{ fontSize: 14, color: "rgba(200,160,80,0.5)", textDecoration: "none", display: "block", marginBottom: 12 }}
+            >
+              5716 Telegraph Rd, Alexandria, VA 22303
+            </a>
+            <p className="font-body" style={{ fontSize: 13, color: "rgba(232,213,181,0.4)", marginBottom: 40, fontStyle: "italic" }}>
+              All readings are by appointment only &nbsp;·&nbsp; Payment due at time of booking
+            </p>
           </FadeIn>
 
           <FadeIn delay={0.25}>
             <div style={{ display: "flex", gap: 20, justifyContent: "center", flexWrap: "wrap" }}>
               <a
-                href="tel:#"
+                href="tel:5717285900"
                 className="cta-btn-primary cta-btn font-body"
                 style={{
                   padding: "16px 44px",
@@ -621,7 +666,10 @@ export default function ServicesPage() {
               Krishna&apos;s Karma
             </div>
             <div className="font-body" style={{ fontSize: 12, color: "rgba(232,213,181,0.35)", letterSpacing: "0.1em" }}>
-              Spiritual Guidance &amp; Sacred Goods
+              5716 Telegraph Rd, Alexandria, VA 22303
+            </div>
+            <div className="font-body" style={{ fontSize: 12, color: "rgba(232,213,181,0.35)", letterSpacing: "0.1em", marginTop: 4 }}>
+              571-728-5900 &nbsp;·&nbsp; LunaPsychic1111@gmail.com
             </div>
           </div>
 
