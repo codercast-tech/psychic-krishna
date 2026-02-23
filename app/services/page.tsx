@@ -108,8 +108,8 @@ const CRYSTALS_PRODUCTS = [
   { id: "citrine-beacon", name: "Citrine Beacon", price: 28650, type: "Citrine", image: "/Crystal/10-citrine-beacon-28.65k.png", desc: "A magnificent beacon citrine of exceptional size and clarity, a statement piece that radiates pure golden light." },
 ];
 
-function formatPrice(cents: number): string {
-  return "$" + (cents / 100).toLocaleString("en-US", { minimumFractionDigits: 0, maximumFractionDigits: 2 });
+function formatPrice(price: number): string {
+  return "$" + price.toLocaleString("en-US");
 }
 
 function useInView(threshold = 0.15): [React.RefObject<HTMLDivElement | null>, boolean] {
