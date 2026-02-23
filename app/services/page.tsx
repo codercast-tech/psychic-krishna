@@ -95,6 +95,23 @@ const SERVICES_DETAIL = [
   },
 ];
 
+const CRYSTALS_PRODUCTS = [
+  { id: "amethyst-cosmic", name: "Amethyst Cosmic", price: 7000, type: "Amethyst", image: "/Crystal/01-amethyst-cosmic-7k.png", desc: "A stunning cosmic amethyst radiating deep purple energy, perfect for enhancing intuition and spiritual awareness." },
+  { id: "amethyst-guardian", name: "Amethyst Guardian", price: 8500, type: "Amethyst", image: "/Crystal/02-amethyst-guardian-8.5k.png", desc: "A powerful guardian amethyst offering protective energy and deep spiritual grounding for your sacred space." },
+  { id: "amethyst-veil", name: "Amethyst Veil", price: 29500, type: "Amethyst", image: "/Crystal/03-amethyst-veil-29.5k.png", desc: "A rare and extraordinary amethyst formation with ethereal veiling, a true centerpiece for collectors and healers." },
+  { id: "amethyst-serenity", name: "Amethyst Serenity", price: 7500, type: "Amethyst", image: "/Crystal/04-amethyst-serenity-7.5k.png", desc: "Emanating calming, serene vibrations, this amethyst soothes the mind and opens the crown chakra for peaceful meditation." },
+  { id: "amethyst-oracle", name: "Amethyst Oracle", price: 11000, type: "Amethyst", image: "/Crystal/05-amethyst-oracle-11k.png", desc: "An oracle-grade amethyst prized for its clarity and connection to higher realms, ideal for divination and deep insight." },
+  { id: "citrine-abundance", name: "Citrine Abundance", price: 17500, type: "Citrine", image: "/Crystal/06-citrine-abundance-17.5k.png", desc: "A radiant citrine known as the stone of abundance, attracting wealth, prosperity, and positive energy into your life." },
+  { id: "citrine-prosperity", name: "Citrine Prosperity", price: 8850, type: "Citrine", image: "/Crystal/07-citrine-prosperity-8.85k.png", desc: "Charged with the energy of prosperity and success, this citrine empowers confidence and manifestation of your goals." },
+  { id: "citrine-flame", name: "Citrine Flame", price: 6500, type: "Citrine", image: "/Crystal/08-citrine-flame-6.5k.png", desc: "A fiery citrine with warm golden tones that ignites creativity, personal power, and joyful self-expression." },
+  { id: "citrine-twin", name: "Citrine Twin", price: 15500, type: "Citrine", image: "/Crystal/09-citrine-twin-15.5k.png", desc: "A rare twin citrine formation symbolizing partnership and harmony, perfect for strengthening bonds and shared intentions." },
+  { id: "citrine-beacon", name: "Citrine Beacon", price: 28650, type: "Citrine", image: "/Crystal/10-citrine-beacon-28.65k.png", desc: "A magnificent beacon citrine of exceptional size and clarity, a statement piece that radiates pure golden light." },
+];
+
+function formatPrice(cents: number): string {
+  return "$" + (cents / 100).toLocaleString("en-US", { minimumFractionDigits: 0, maximumFractionDigits: 2 });
+}
+
 function useInView(threshold = 0.15): [React.RefObject<HTMLDivElement | null>, boolean] {
   const ref = useRef<HTMLDivElement | null>(null);
   const [isVisible, setIsVisible] = useState(false);
@@ -241,6 +258,56 @@ export default function ServicesPage() {
           .service-section:nth-child(even) .service-layout {
             direction: ltr;
           }
+        }
+
+        .crystal-grid {
+          display: grid;
+          grid-template-columns: repeat(5, 1fr);
+          gap: 20px;
+        }
+
+        @media (max-width: 1100px) {
+          .crystal-grid {
+            grid-template-columns: repeat(3, 1fr);
+          }
+        }
+
+        @media (max-width: 700px) {
+          .crystal-grid {
+            grid-template-columns: repeat(2, 1fr);
+          }
+        }
+
+        @media (max-width: 480px) {
+          .crystal-grid {
+            grid-template-columns: 1fr;
+            max-width: 320px;
+            margin-left: auto;
+            margin-right: auto;
+          }
+        }
+
+        .crystal-product {
+          position: relative;
+          background: linear-gradient(170deg, rgba(30,20,12,0.9) 0%, rgba(18,12,8,0.95) 100%);
+          border: 1px solid rgba(200,160,80,0.12);
+          border-radius: 4px;
+          overflow: hidden;
+          transition: all 0.5s cubic-bezier(0.22,1,0.36,1);
+        }
+
+        .crystal-product:hover {
+          border-color: rgba(200,160,80,0.35);
+          transform: translateY(-6px);
+          box-shadow: 0 16px 48px rgba(0,0,0,0.4), 0 0 24px rgba(200,160,80,0.08);
+        }
+
+        .crystal-product img {
+          transition: transform 0.6s cubic-bezier(0.22,1,0.36,1);
+        }
+
+        .crystal-product:hover img {
+          transform: scale(1.05);
         }
 
         ::selection {
@@ -547,6 +614,110 @@ export default function ServicesPage() {
               </FadeIn>
             </div>
           </div>
+
+          {/* Crystal Products Grid */}
+          {service.id === "crystals" && (
+            <div style={{ maxWidth: 1200, margin: "60px auto 0" }}>
+              <FadeIn>
+                <div style={{ textAlign: "center", marginBottom: 40 }}>
+                  <h3 className="font-display" style={{ fontSize: "clamp(24px, 3vw, 36px)", fontWeight: 400, marginBottom: 12 }}>
+                    Our Collection
+                  </h3>
+                  <p className="font-body" style={{ fontSize: 14, color: "rgba(232,213,181,0.45)", letterSpacing: "0.05em" }}>
+                    Premium specimens · Inquire to purchase
+                  </p>
+                </div>
+              </FadeIn>
+
+              <div className="crystal-grid">
+                {CRYSTALS_PRODUCTS.map((crystal, ci) => (
+                  <FadeIn key={crystal.id} delay={ci * 0.08}>
+                    <div className="crystal-product">
+                      <div style={{ position: "relative", aspectRatio: "1/1", overflow: "hidden", background: "#0a0705" }}>
+                        {/* Price badge */}
+                        <div
+                          className="font-body"
+                          style={{
+                            position: "absolute",
+                            top: 8,
+                            right: 8,
+                            background: "rgba(14,10,7,0.88)",
+                            border: "1px solid rgba(200,160,80,0.4)",
+                            padding: "3px 10px",
+                            fontSize: 12,
+                            fontWeight: 500,
+                            color: "#c9a96e",
+                            letterSpacing: "0.03em",
+                            zIndex: 3,
+                            backdropFilter: "blur(4px)",
+                          }}
+                        >
+                          {formatPrice(crystal.price)}
+                        </div>
+
+                        {/* Type badge */}
+                        <div
+                          className="font-body"
+                          style={{
+                            position: "absolute",
+                            top: 8,
+                            left: 8,
+                            background: "rgba(14,10,7,0.75)",
+                            padding: "3px 10px",
+                            fontSize: 9,
+                            fontWeight: 400,
+                            color: "rgba(200,160,80,0.6)",
+                            letterSpacing: "0.15em",
+                            textTransform: "uppercase",
+                            zIndex: 3,
+                          }}
+                        >
+                          {crystal.type}
+                        </div>
+
+                        <img
+                          src={crystal.image}
+                          alt={crystal.name}
+                          style={{
+                            width: "100%",
+                            height: "100%",
+                            objectFit: "cover",
+                            display: "block",
+                          }}
+                        />
+                      </div>
+
+                      <div style={{ padding: "14px 12px 16px", textAlign: "center" }}>
+                        <h4 className="font-display" style={{ fontSize: 16, fontWeight: 500, marginBottom: 6, letterSpacing: "0.02em" }}>
+                          {crystal.name}
+                        </h4>
+                        <p className="font-body" style={{ fontSize: 11, fontWeight: 300, color: "rgba(232,213,181,0.45)", lineHeight: 1.6 }}>
+                          {crystal.desc}
+                        </p>
+                        <a
+                          href="tel:5717285900"
+                          className="font-body"
+                          style={{
+                            display: "inline-block",
+                            marginTop: 12,
+                            fontSize: 10,
+                            letterSpacing: "0.15em",
+                            textTransform: "uppercase",
+                            color: "#c9a96e",
+                            textDecoration: "none",
+                            borderBottom: "1px solid rgba(200,160,80,0.3)",
+                            paddingBottom: 2,
+                          }}
+                        >
+                          Inquire
+                        </a>
+                      </div>
+                    </div>
+                  </FadeIn>
+                ))}
+              </div>
+            </div>
+          )}
         </section>
       ))}
 
